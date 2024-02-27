@@ -89,6 +89,67 @@ F H <BR>
 ['0', '1', '2', '3', '4']
 
 <hr>
+<h3>Program:</h3>
+
+```python
+'''Depth First Search uses STACK AND RECURSION
+'''
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+
+```
+
+```python
+'''Depth First Search uses STACK AND RECURSION
+'''
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='0'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+<h3>Output: </h3>
+<img src="https://github.com/Jenishajustin/19AI405ExpNo2/assets/119405070/1b77a2d3-c7ca-4eff-88ad-28607994bd77">
+<img src="https://github.com/Jenishajustin/19AI405ExpNo2/assets/119405070/05949b6e-5888-4e59-a294-37c0c81b0c54">
+
+
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
